@@ -10,23 +10,7 @@ class App(QMainWindow):
     def __init__(self):
         super(App, self).__init__()
 
-        self.ao_sat_val = 0
-        self.pa_sat_val = 0
-        self.ivc_sat_val = 0
-        self.svc_sat_val = 0
-        self.pv_sat_val = 0
-        self.mv_sat_val = 0
-        self.co_val = 0
-        self.ci_val = 0
-        self.pvr_val = 0
-        self.svr_val = 0
-        self.o2_cons_val = 0
-        self.weight_val = 0
-        self.height_val = 0
-        self.bsa_val = 0
-        self.hb_val = 0
-        self.ao_o2_cont = 0
-        self.pa_o2_cont = 0
+
         self.initializeUI()
 
     def initializeUI(self):
@@ -225,7 +209,7 @@ class App(QMainWindow):
 
 
         self.calc_tbl = QTableWidget()
-        self.calc_tbl.setRowCount(8)
+        self.calc_tbl.setRowCount(9)
 
         self.calc_tbl.setColumnCount(2)
 
@@ -246,6 +230,8 @@ class App(QMainWindow):
 
         self.calc_tbl.setItem(6,0, QTableWidgetItem("TPG (mmHg)"))
         self.calc_tbl.setItem(7,0, QTableWidgetItem("DPG (mmHg)"))
+                
+        self.calc_tbl.setItem(8,0, QTableWidgetItem("Qp/Qs"))
 
         calc_panel_v_box.addWidget(self.calc_tbl)
 
@@ -307,13 +293,14 @@ class App(QMainWindow):
         self.rap_val = int(self.rap_entry.text())
 
     
-        self.ao_o2_cont = self.hb_val * 1.36 * self.ao_sat_val
-        self.pa_o2_cont = self.hb_val * 1.36 * self.pa_sat_val
+        self.ao_o2_cont = self.hb_val * 1.34 * self.ao_sat_val
+        self.mv_o2_cont = self.hb_val * 1.34 * self.mv_sat_val
         
-        self.o2_cons_val = (3 * self.weight_val)
         self.bsa_val = math.sqrt((self.height_val * self.weight_val)/3600) 
 
-        self.co_val = self.o2_cons_val /((self.ao_o2_cont - self.pa_o2_cont)*10)
+        self.o2_cons_val = (3 * self.weight_val)
+
+        self.co_val = self.o2_cons_val /((self.ao_o2_cont - self.mv_o2_cont)*10)
         self.ci_val = self.co_val/self.bsa_val
 
         self.svr_val_wood = (self.aomp_val - self.rap_val)/self.co_val
@@ -328,6 +315,12 @@ class App(QMainWindow):
         self.tpg_val = self.pamp_val - self.pcwp_val
 
         self.dpg_val = self.padp_val - self.pcwp_val
+        
+        self.pv_o2_cont = self.hb_val * 1.34 * self.pv_sat_val
+        self.pa_o2_cont = self.hb_val * 1.34 * self.pa_sat_val
+        
+        
+        self.qp_val = self.o2_cons_val / ((self.pv_o2_cont - self.pa_o2_cont)*10)
 
 
         self.calc_tbl.setItem(0,1, QTableWidgetItem(str(round(self.co_val,2))))
@@ -340,6 +333,7 @@ class App(QMainWindow):
 
         self.calc_tbl.setItem(6,1, QTableWidgetItem(str(round(self.tpg_val,2))))
         self.calc_tbl.setItem(7,1, QTableWidgetItem(str(round(self.dpg_val,2))))
+        self.calc_tbl.setItem(8,1, QTableWidgetItem(str(round(self.qp_val/self.co_val,2))))
 
 
 if __name__ == '__main__':
