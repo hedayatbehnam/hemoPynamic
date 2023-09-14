@@ -3,4 +3,7 @@ bin
 dist
 HemoPy.tar.gz
 build/
+<<<<<<< HEAD
 build/HemoPy
+=======
+>>>>>>> f6a52015e695d4e9d0858c82b90f3b2a49ba27fc
