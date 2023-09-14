@@ -2,4 +2,4 @@ lib
 bin
 dist
 HemoPy.tar.gz
-build
+build/
