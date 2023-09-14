@@ -1,4 +1,3 @@
-
 import sys, math
 from PyQt5.QtCore import QSize, Qt
 from PyQt5.QtGui import QIcon, QFont
@@ -226,7 +225,7 @@ class App(QMainWindow):
 
 
         self.calc_tbl = QTableWidget()
-        self.calc_tbl.setRowCount(6)
+        self.calc_tbl.setRowCount(8)
 
         self.calc_tbl.setColumnCount(2)
 
@@ -240,9 +239,13 @@ class App(QMainWindow):
         self.calc_tbl.setItem(0,0, QTableWidgetItem("Cardiac Output (L/min)"))
         self.calc_tbl.setItem(1,0, QTableWidgetItem("Cardiac Index (L/min/m2)"))
         self.calc_tbl.setItem(2,0, QTableWidgetItem("SVR (Dynes.sec.cm-5)"))
-        self.calc_tbl.setItem(3,0, QTableWidgetItem("PVR (Dynes.sec.cm-5)"))
-        self.calc_tbl.setItem(4,0, QTableWidgetItem("TPG (mmHg)"))
-        self.calc_tbl.setItem(5,0, QTableWidgetItem("DPG (mmHg)"))
+        self.calc_tbl.setItem(3,0, QTableWidgetItem("SVR (Wood)"))
+
+        self.calc_tbl.setItem(4,0, QTableWidgetItem("PVR (Dynes.sec.cm-5)"))
+        self.calc_tbl.setItem(5,0, QTableWidgetItem("PVR (Wood)"))
+
+        self.calc_tbl.setItem(6,0, QTableWidgetItem("TPG (mmHg)"))
+        self.calc_tbl.setItem(7,0, QTableWidgetItem("DPG (mmHg)"))
 
         calc_panel_v_box.addWidget(self.calc_tbl)
 
@@ -260,9 +263,6 @@ class App(QMainWindow):
         calc_panel_frame.setMinimumWidth(200)
         calc_panel_frame.setFrameStyle(QFrame.WinPanel)
         calc_panel_frame.setLayout(calc_panel_v_box)
-
-
-
 
         main_h_box = QHBoxLayout()
         main_h_box.addWidget(side_panel_frame)
@@ -316,10 +316,14 @@ class App(QMainWindow):
         self.co_val = self.o2_cons_val /((self.ao_o2_cont - self.pa_o2_cont)*10)
         self.ci_val = self.co_val/self.bsa_val
 
-        self.svr_val = ((self.aomp_val - self.rap_val) * 80)/self.co_val
+        self.svr_val_wood = (self.aomp_val - self.rap_val)/self.co_val
 
 
-        self.pvr_val = ((self.pamp_val - self.pcwp_val) * 80)/self.co_val
+        self.pvr_val_wood = (self.pamp_val - self.pcwp_val)/self.co_val
+        
+        self.svr_val = self.svr_val_wood * 80
+        self.pvr_val = self.pvr_val_wood * 80
+        
 
         self.tpg_val = self.pamp_val - self.pcwp_val
 
@@ -329,9 +333,13 @@ class App(QMainWindow):
         self.calc_tbl.setItem(0,1, QTableWidgetItem(str(round(self.co_val,2))))
         self.calc_tbl.setItem(1,1, QTableWidgetItem(str(round(self.ci_val,2))))
         self.calc_tbl.setItem(2,1, QTableWidgetItem(str(round(self.svr_val,2))))
-        self.calc_tbl.setItem(3,1, QTableWidgetItem(str(round(self.pvr_val,2))))
-        self.calc_tbl.setItem(4,1, QTableWidgetItem(str(round(self.tpg_val,2))))
-        self.calc_tbl.setItem(5,1, QTableWidgetItem(str(round(self.dpg_val,2))))
+        self.calc_tbl.setItem(3,1, QTableWidgetItem(str(round(self.svr_val_wood,2))))
+
+        self.calc_tbl.setItem(4,1, QTableWidgetItem(str(round(self.pvr_val,2))))
+        self.calc_tbl.setItem(5,1, QTableWidgetItem(str(round(self.pvr_val_wood,2))))
+
+        self.calc_tbl.setItem(6,1, QTableWidgetItem(str(round(self.tpg_val,2))))
+        self.calc_tbl.setItem(7,1, QTableWidgetItem(str(round(self.dpg_val,2))))
 
 
 if __name__ == '__main__':
