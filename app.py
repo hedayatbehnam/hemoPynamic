@@ -239,28 +239,12 @@ class App(QMainWindow):
         
         self.calc_tbl.setItem(0,0, QTableWidgetItem("Cardiac Output (L/min)"))
         self.calc_tbl.setItem(1,0, QTableWidgetItem("Cardiac Index (L/min/m2)"))
-        self.calc_tbl.setItem(2,0, QTableWidgetItem("SVR (dyn/sec-5)"))
-        self.calc_tbl.setItem(3,0, QTableWidgetItem("PVR (dyn/sec-5)"))
+        self.calc_tbl.setItem(2,0, QTableWidgetItem("SVR (Dynes.sec.cm-5)"))
+        self.calc_tbl.setItem(3,0, QTableWidgetItem("PVR (Dynes.sec.cm-5)"))
         self.calc_tbl.setItem(4,0, QTableWidgetItem("TPG (mmHg)"))
         self.calc_tbl.setItem(5,0, QTableWidgetItem("DPG (mmHg)"))
 
         calc_panel_v_box.addWidget(self.calc_tbl)
-
-        
-
-#       calc_panel_v_box.addWidget(self.co_calc)
-#       calc_panel_v_box.addSpacing(2)
-#       calc_panel_v_box.addWidget(self.ci_calc)
-#       calc_panel_v_box.addSpacing(2)
-#       calc_panel_v_box.addWidget(self.svr_calc)
-#       calc_panel_v_box.addSpacing(2)
-#       calc_panel_v_box.addWidget(self.pvr_calc)
-#       calc_panel_v_box.addSpacing(2)
-#
-#
-
-
-
 
         side_panel_frame = QFrame()
         side_panel_frame.setMaximumWidth(200)
