@@ -1,7 +1,6 @@
 
 block_cipher = None
 
-
 a = Analysis(['entry.py'],
              pathex=['.'],
              binaries=[],
@@ -15,6 +14,7 @@ a = Analysis(['entry.py'],
              win_private_assemblies=False,
              cipher=block_cipher,
              noarchive=False)
+
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 
@@ -32,6 +32,7 @@ exe = EXE(pyz,
           target_arch=None,
           codesign_identity=None,
           entitlements_file=None )
+
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -40,3 +41,4 @@ coll = COLLECT(exe,
                upx=True,
                upx_exclude=[],
                name='main')
+
