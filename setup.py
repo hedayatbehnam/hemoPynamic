@@ -8,7 +8,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/hedayatbehnam/hemoPynamic",
     author="Behnam Hedayat",
-    author_email="bhedayat.thc@gmail.com",
+    author_email="",
     license="MIT",
     classifiers=[
         "License :: OSI Approved :: MIT License",
@@ -18,7 +18,7 @@ setup(
     packages=["src"],
     include_package_data=True,
     install_requires=[
-        "PyQt5", "PyQt5-Qt5","PyQt5-sip", ""
+        "PyQt5", "PyQt5-Qt5","PyQt5-sip"
     ],
     entry_points={"console_scripts": ["HemoPy=src.main:App"]},
 )

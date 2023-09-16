@@ -1,6 +1,6 @@
 lib
 bin
-dist
+
 build/
 __pycache__
 HemoPy.tar.gz
