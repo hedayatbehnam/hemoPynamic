@@ -14,7 +14,7 @@ or using website link to download **zip** folder.
 If you are in linux, you should use `unzip` command in terminal.  
 
 Entrypoint to app is `entry.py` file:  
-```{python}
+```
 python entry.py
 # or  
 python3 entry.py
