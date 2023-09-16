@@ -7,16 +7,26 @@ A single page desktop application for calculation of common hemodynamic equation
 You can clone repo by github CLI:
 \
 \
-`git clone https://github.com/hedayatbehnam/hemoPynamic`    
-or using website link to download **zip** folder.    
-![zip download image](images/zip_download.png "zip download")  
-  
-
-If you are in linux, you should use `unzip` command in terminal.  
+`git clone https://github.com/hedayatbehnam/hemoPynamic`
+\
+\
+or using website link to download **zip** folder.
+\
+\
+![zip download image](images/zip_download.png "zip download")
+\
+\
+If you are in linux, you should use `unzip` command in terminal.
+\
 ___
   
-Then install dependencies:    
+\
+Then install dependencies:
+\
+\
 `pip install -r requirements.txt`    
+\
+\
 
 
 Entrypoint to the app is `entry.py` file:    
