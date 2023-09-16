@@ -3,6 +3,10 @@ A single page desktop application for calculation of common hemodynamic equation
 
 ![App main window](images/hemoPynamic.png "HemoPy GUI")  
 
+## Introduction
+HemoPynamic has been written in python language using **PyQt5** module. \
+Using concept of `BoxLayout` to arrange sections of the app.
+
 ## How to use
 You can clone repo by github CLI:
 

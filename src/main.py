@@ -282,3 +282,4 @@ class App(QMainWindow):
         self.calc_tbl.setItem(7,1, QTableWidgetItem(str(round(self.dpg_val,2))))
         self.calc_tbl.setItem(8,1, QTableWidgetItem(str(round(self.qp_val/self.co_val,2))))
 
+
