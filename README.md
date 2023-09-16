@@ -6,7 +6,7 @@ A single page desktop application for calculation of common hemodynamic equation
 ## How to use
 You can clone repo by github CLI:
 \
-\
+
 ```
 git clone https://github.com/hedayatbehnam/hemoPynamic
 ```
@@ -23,11 +23,15 @@ ___
   
 Then install dependencies:
 \
-\
-```pip install -r requirements.txt```
+
+```
+pip install -r requirements.txt
+```
 
 
 
 To run app type following command in terminal
 
-```python entry.py```
+```
+python entry.py
+```
