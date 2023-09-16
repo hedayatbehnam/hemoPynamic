@@ -17,17 +17,14 @@ or using website link to download **zip** folder.
 \
 \
 If you are in linux, you should use `unzip` command in terminal.
-\
 ___
   
-\
 Then install dependencies:
 \
 \
-`pip install -r requirements.txt`    
+`pip install -r requirements.txt`
 \
 \
-
 
 Entrypoint to the app is `entry.py` file:    
 
