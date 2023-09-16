@@ -5,23 +5,18 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow, QPushButton, QS
 QAction, QTextEdit, QToolBar, QDockWidget, QVBoxLayout, QHBoxLayout, QAction, QFrame,
 QLabel, QLineEdit, QGridLayout, QTableWidget, QHeaderView, QTableView, QTableWidgetItem)
 
-
 class App(QMainWindow):
     def __init__(self):
         super(App, self).__init__()
-
 
         self.initializeUI()
 
     def initializeUI(self):
 
         self.setFixedSize(900,600)
-
         self.setWindowTitle("Hemodynamics Calculator")
-
         self.parametersWindow()
         self.show()
-
 
     def parametersWindow(self):
 
@@ -32,7 +27,6 @@ class App(QMainWindow):
         height_lbl = QLabel("Height [cm]")
         self.height_entry = QLineEdit()
         self.height_entry.setMaximumWidth(200)
-
 
         hb_lbl = QLabel("Hb [g/dL]")
         self.hb_entry = QLineEdit()
@@ -54,11 +48,9 @@ class App(QMainWindow):
         self.aomp_entry = QLineEdit()
         self.aomp_entry.setMaximumWidth(200)
 
-
         pa_sat_lbl = QLabel("PA Sat")
         self.pa_sat_entry = QLineEdit()
         self.pa_sat_entry.setMaximumWidth(200)
-
 
         pasp_lbl = QLabel("PA Sys Pressure")
         self.pasp_entry = QLineEdit()
@@ -72,7 +64,6 @@ class App(QMainWindow):
         self.pamp_entry = QLineEdit()
         self.pamp_entry.setMaximumWidth(200)
 
-
         pcwp_lbl = QLabel("PA Wedge Pressure")
         self.pcwp_entry = QLineEdit()
         self.pcwp_entry.setMaximumWidth(200)
@@ -80,7 +71,6 @@ class App(QMainWindow):
         rap_lbl = QLabel("RA Mean Pressure")
         self.rap_entry = QLineEdit()
         self.rap_entry.setMaximumWidth(200)
-
 
         ivc_sat_lbl = QLabel("IVC Sat")
         self.ivc_sat_entry = QLineEdit()
@@ -98,7 +88,6 @@ class App(QMainWindow):
         self.apply_btn.setEnabled(True)
         self.apply_btn.clicked.connect(self.calculatorEngine)
 
-
         mid_panel_v_box = QVBoxLayout()
         mid_panel_v_box.setAlignment(Qt.AlignTop)
 
@@ -109,50 +98,39 @@ class App(QMainWindow):
         calc_panel_v_box.setAlignment(Qt.AlignTop)
         
         side_panel_v_box.addWidget(weight_lbl)
-        
         side_panel_v_box.addWidget(self.weight_entry)
-
         side_panel_v_box.addSpacing(2)
 
         side_panel_v_box.addWidget(height_lbl)
-
         side_panel_v_box.addWidget(self.height_entry)
         side_panel_v_box.addSpacing(2)
 
         side_panel_v_box.addWidget(hb_lbl)
-
         side_panel_v_box.addWidget(self.hb_entry)
         side_panel_v_box.addSpacing(2)
 
         side_panel_v_box.addWidget(ao_sat_lbl)
-
         side_panel_v_box.addWidget(self.ao_sat_entry)
-        
         side_panel_v_box.addSpacing(2)
+        
         side_panel_v_box.addWidget(pa_sat_lbl)
-
         side_panel_v_box.addWidget(self.pa_sat_entry)
+        side_panel_v_box.addSpacing(2)
         
-
-        side_panel_v_box.addSpacing(2)
         side_panel_v_box.addWidget(svc_sat_lbl)
-
         side_panel_v_box.addWidget(self.svc_sat_entry)
-
         side_panel_v_box.addSpacing(2)
+
         side_panel_v_box.addWidget(ivc_sat_lbl)
-
         side_panel_v_box.addWidget(self.ivc_sat_entry)
-
         side_panel_v_box.addSpacing(2)
+
         side_panel_v_box.addWidget(pv_sat_lbl)
         side_panel_v_box.addWidget(self.pv_sat_entry)
-
 
         mid_panel_v_box.addWidget(aosp_lbl)
         mid_panel_v_box.addWidget(self.aosp_entry)
         mid_panel_v_box.addSpacing(2)
-
 
         mid_panel_v_box.addWidget(aodp_lbl)
         mid_panel_v_box.addWidget(self.aodp_entry)
@@ -162,11 +140,9 @@ class App(QMainWindow):
         mid_panel_v_box.addWidget(self.aomp_entry)
         mid_panel_v_box.addSpacing(2)
 
-
         mid_panel_v_box.addWidget(pasp_lbl)
         mid_panel_v_box.addWidget(self.pasp_entry)
         mid_panel_v_box.addSpacing(2)
-
 
         mid_panel_v_box.addWidget(padp_lbl)
         mid_panel_v_box.addWidget(self.padp_entry)
@@ -176,24 +152,19 @@ class App(QMainWindow):
         mid_panel_v_box.addWidget(self.pamp_entry)
         mid_panel_v_box.addSpacing(2)
 
-
         mid_panel_v_box.addWidget(pcwp_lbl)
         mid_panel_v_box.addWidget(self.pcwp_entry)
         mid_panel_v_box.addSpacing(2)
-
 
         mid_panel_v_box.addWidget(rap_lbl)
         mid_panel_v_box.addWidget(self.rap_entry)
         mid_panel_v_box.addSpacing(2)
 
-
         mid_panel_v_box.addSpacing(160)
         mid_panel_v_box.addWidget(self.apply_btn)
 
-
         calc_lbl = QLabel("Calculations")
         calc_lbl.setFont(QFont("calibri", 15, QFont.Bold))
-
 
         self.co_calc = QLabel("Cardiac Output:  ")
         self.ci_calc = QLabel("Cardiac Index:  ")
@@ -202,17 +173,13 @@ class App(QMainWindow):
         self.tpg_calc = QLabel("TPR:  ")
         self.dpg_calc = QLabel("DPG:  ")
 
-
-        
         calc_panel_v_box.addWidget(calc_lbl)
         calc_panel_v_box.addSpacing(2)
-
 
         self.calc_tbl = QTableWidget()
         self.calc_tbl.setRowCount(9)
 
         self.calc_tbl.setColumnCount(2)
-
 
         self.calc_tbl.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.calc_tbl.verticalHeader().setVisible(False)
@@ -261,7 +228,6 @@ class App(QMainWindow):
 
     def calculatorEngine(self):
 
-
         self.ivc_sat_val = int(self.ivc_sat_entry.text())/100
         self.svc_sat_val = int(self.svc_sat_entry.text())/100
         self.ao_sat_val = int(self.ao_sat_entry.text())/100
@@ -273,8 +239,8 @@ class App(QMainWindow):
         self.height_val = int(self.height_entry.text())
         
         self.aosp_val = int(self.aosp_entry.text())
-
         self.aodp_val = int(self.aodp_entry.text())
+
         if self.aomp_entry.text():
             self.aomp_val = int(self.aomp_entry.text()) 
         else:
@@ -289,56 +255,37 @@ class App(QMainWindow):
             self.pamp_val = (self.pasp_val + (2*self.padp_val))/3
 
         self.pcwp_val = int(self.pcwp_entry.text())
-
         self.rap_val = int(self.rap_entry.text())
-
-    
         self.ao_o2_cont = self.hb_val * 1.34 * self.ao_sat_val
         self.mv_o2_cont = self.hb_val * 1.34 * self.mv_sat_val
-        
         self.bsa_val = math.sqrt((self.height_val * self.weight_val)/3600) 
-
         self.o2_cons_val = (3 * self.weight_val)
-
         self.co_val = self.o2_cons_val /((self.ao_o2_cont - self.mv_o2_cont)*10)
         self.ci_val = self.co_val/self.bsa_val
-
         self.svr_val_wood = (self.aomp_val - self.rap_val)/self.co_val
-
-
         self.pvr_val_wood = (self.pamp_val - self.pcwp_val)/self.co_val
-        
         self.svr_val = self.svr_val_wood * 80
         self.pvr_val = self.pvr_val_wood * 80
-        
-
         self.tpg_val = self.pamp_val - self.pcwp_val
-
         self.dpg_val = self.padp_val - self.pcwp_val
-        
         self.pv_o2_cont = self.hb_val * 1.34 * self.pv_sat_val
         self.pa_o2_cont = self.hb_val * 1.34 * self.pa_sat_val
-        
-        
         self.qp_val = self.o2_cons_val / ((self.pv_o2_cont - self.pa_o2_cont)*10)
-
 
         self.calc_tbl.setItem(0,1, QTableWidgetItem(str(round(self.co_val,2))))
         self.calc_tbl.setItem(1,1, QTableWidgetItem(str(round(self.ci_val,2))))
         self.calc_tbl.setItem(2,1, QTableWidgetItem(str(round(self.svr_val,2))))
         self.calc_tbl.setItem(3,1, QTableWidgetItem(str(round(self.svr_val_wood,2))))
-
         self.calc_tbl.setItem(4,1, QTableWidgetItem(str(round(self.pvr_val,2))))
         self.calc_tbl.setItem(5,1, QTableWidgetItem(str(round(self.pvr_val_wood,2))))
-
         self.calc_tbl.setItem(6,1, QTableWidgetItem(str(round(self.tpg_val,2))))
         self.calc_tbl.setItem(7,1, QTableWidgetItem(str(round(self.dpg_val,2))))
         self.calc_tbl.setItem(8,1, QTableWidgetItem(str(round(self.qp_val/self.co_val,2))))
 
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    window = App()
-    sys.exit(app.exec_())
-
+#if __name__ == '__main__':
+#    app = QApplication(sys.argv)
+#    window = App()
+#    sys.exit(app.exec_())
+#
 
