@@ -26,7 +26,7 @@ or using website link to download **zip** folder.
 ![zip download image](images/zip_download.png "zip download")
 \
 \
-If you are in linux, you should use `unzip` command in terminal.
+If you are in linux, you should use `unzip` command in terminal to extract its contents.
 ___
   
 Then install dependencies:
