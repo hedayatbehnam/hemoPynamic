@@ -11,7 +11,7 @@ Using concept of `BoxLayout` to arrange sections of the app.
 ### **Run Distributed version**    
 You can download distribution version of the app from the link bellow and go to `dist` directory and open ***HemoPy*** file.  
 
-[HemoPy Distribution Version](https://drive.google.com/drive/folders/1wf7LlUEpNvbVZOjF-F_jmIRxLnsiuZM4?usp=drive_link)  
+[HemoPy Distribution Version](https://drive.google.com/drive/folders/1_7By4Yms85XvC2QTSMnhCembRtPQIDT9?usp=drive_link)
 At the moment only linux executable distribution version is available.  
 
 ### **Run by python**    
