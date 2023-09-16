@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 
 
-To run app type following command in terminal
+To run app type following command in terminal in app main dir:
 
 ```
 python entry.py
