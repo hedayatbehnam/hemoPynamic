@@ -1,9 +1,9 @@
 import sys, math
-from PyQt5.QtCore import QSize, Qt
-from PyQt5.QtGui import QIcon, QFont
-from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow, QPushButton, QSplitter,
-QAction, QTextEdit, QToolBar, QDockWidget, QVBoxLayout, QHBoxLayout, QAction, QFrame,
-QLabel, QLineEdit, QGridLayout, QTableWidget, QHeaderView, QTableView, QTableWidgetItem)
+from PyQt5.QtCore import QSize,Qt
+from PyQt5.QtGui import QFont 
+from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow, QPushButton,QFrame,  
+QVBoxLayout,QHBoxLayout,QHeaderView, QLabel, QLineEdit,QTableView,QTableWidget,
+QTableWidgetItem)
 
 class App(QMainWindow):
     def __init__(self):

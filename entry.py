@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QApplication
-import sys, os
+import sys
 from src.main import App
 
 if __name__ == '__main__':
