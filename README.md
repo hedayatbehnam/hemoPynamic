@@ -4,7 +4,9 @@ A single page desktop application for calculation of common hemodynamic equation
 ![App main window](images/hemoPynamic.png "HemoPy GUI")  
 
 ## How to use
-You can clone repo by github CLI: \n\n
+You can clone repo by github CLI:
+\
+\
 `git clone https://github.com/hedayatbehnam/hemoPynamic`    
 or using website link to download **zip** folder.    
 ![zip download image](images/zip_download.png "zip download")  
