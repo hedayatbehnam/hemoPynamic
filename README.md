@@ -24,7 +24,6 @@ Then install dependencies:
 \
 `pip install -r requirements.txt`
 \
-\
 
 Entrypoint to the app is `entry.py` file:    
 
